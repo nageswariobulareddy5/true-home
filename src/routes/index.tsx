@@ -24,7 +24,8 @@ export const Route = createFileRoute("/")({ component: Index });
 
 const navLinks = [
   { label: "About", href: "#about" },
-  { label: "Services", href: "#services" },
+  { label: "TEAM", href: "#team" },
+  { label: "Expertise", href: "#expertise" },
   { label: "Portfolio", href: "#portfolio" },
   { label: "Contact", href: "#contact" },
 ];
@@ -168,7 +169,10 @@ function About() {
 
       {/* New Team Section */}
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 mt-40">
+      <div
+  id="team"
+  className="max-w-7xl mx-auto px-6 lg:px-12 mt-40 scroll-mt-32"
+>
 
         <div className="text-center mb-20">
 
@@ -299,7 +303,7 @@ const services = [
 
 function Services() {
   return (
-    <section id="services" className="py-28 md:py-40 bg-muted/40">
+    <section id="expertise" className="py-28 md:py-40 bg-muted/40">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
 
         <div className="text-center mb-20">
@@ -308,7 +312,7 @@ function Services() {
           </p>
 
           <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl mb-6">
-            Our <span className="italic">Services</span>
+            Our <span className="italic">Expertise</span>
           </h2>
 
           <span className="gold-divider" />
@@ -353,51 +357,51 @@ function Services() {
 
 const gallery = [
   {
-    src: pf1,
+    src: pf2,
     h: "row-span-2",
     alt: "Villa Project",
-    name: "Skyline Villa",
-    location: "Hyderabad, India"
+    name: "Sunshine ARKA",
+    location: "Chakrapuri Colony"
   },
 
   {
-    src: pf2,
+    src: pf1,
     h: "",
     alt: "Apartment Project",
-    name: "Luxury Heights",
-    location: "Bangalore, India"
-  },
-
-  {
-    src: pf3,
-    h: "",
-    alt: "Residential Project",
-    name: "Palm Residency",
-    location: "Chennai, India"
+    name: "Dhanujaya Elite",
+    location: "Bachupally"
   },
 
   {
     src: pf4,
+    h: "",
+    alt: "Residential Project",
+    name: "Trident",
+    location: "Ameenpur"
+  },
+
+  {
+    src: pf3,
     h: "row-span-2",
     alt: "Interior Project",
-    name: "Elite Homes",
-    location: "Mumbai, India"
+    name: "Balaji Platina",
+    location: "Bachupally"
   },
 
   {
     src: pf5,
     h: "",
     alt: "Modern Project",
-    name: "Urban Nest",
-    location: "Delhi, India"
+    name: "Ameya Pearl",
+    location: "Ameenpur"
   },
 
   {
     src: pf6,
     h: "",
     alt: "Premium Project",
-    name: "Royal Residency",
-    location: "Pune, India"
+    name: "Green Rich Country",
+    location: "Kompally"
   }
 ];
 
