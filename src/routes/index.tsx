@@ -2,29 +2,39 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
 import "@fontsource/antonio";
-import { Home, Hammer, Compass, Mail, Phone, MapPin, Instagram, Facebook, Linkedin } from "lucide-react";
-import logo from "@/assets/logo.png";
-import hero from "@/assets/hero.png";
-import about from "@/assets/about.jpg";
-import pf1 from "@/assets/pf1.png";
-import pf2 from "@/assets/pf2.png";
-import pf3 from "@/assets/pf3.png";
-import pf4 from "@/assets/pf4.png";
-import pf5 from "@/assets/pf5.png";
-import pf6 from "@/assets/pf6.png";
+import {
+  Home,
+  Hammer,
+  Compass,
+  Mail,
+  Phone,
+  MapPin,
+  Instagram,
+  Facebook,
+  Linkedin,
+  Sun,
+  Moon
+} from "lucide-react";
+import logo from "../assets/logo.png";
+import about from "../assets/about.jpg";
+import hero from "../assets/hero.png";
+import sunset from "../assets/sunset.png";
+import pf1 from "../assets/pf1.png";
+import pf2 from "../assets/pf2.png";
+import pf3 from "../assets/pf3.png";
+import pf4 from "../assets/pf4.png";
+import pf5 from "../assets/pf5.png";
+import pf6 from "../assets/pf6.png";
 import villa from "../assets/villa.png";
 import apartment from "../assets/apartments.png";
 import villaApartment from "../assets/villa-apartment.jpg";
-import member1 from "../assets/member1.jpg";
-import member2 from "../assets/member2.jpg";
-import member3 from "../assets/member3.jpg";
+
 
 
 export const Route = createFileRoute("/")({ component: Index });
 
 const navLinks = [
   { label: "About", href: "#about" },
-  { label: "TEAM", href: "#team" },
   { label: "Expertise", href: "#expertise" },
   { label: "Portfolio", href: "#portfolio" },
   { label: "Contact", href: "#contact" },
@@ -32,57 +42,162 @@ const navLinks = [
 
 function Header() {
   const [scrolled, setScrolled] = useState(false);
+
+  const [darkMode, setDarkMode] = useState(
+    localStorage.getItem("theme") === "dark"
+  );
+
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
+
     window.addEventListener("scroll", onScroll);
+
+    if (darkMode) {
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+    }
+
     return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+
+  }, [darkMode]);
+
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled ? "bg-white shadow-sm py-3" : "bg-transparent py-5"
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between">
-        <a href="#top" className="flex items-center gap-3">
-          <img src={logo} alt="True Home Builders" className="h-12 w-12 rounded-full object-cover" />
-         <span 
-  className={`text-lg tracking-wide ${scrolled ? "text-black" : "text-white"}`}
-  style={{ fontFamily: "'Antonio', sans-serif" }}
+  className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+    scrolled
+      ? "bg-white shadow-sm py-3"
+      : "bg-transparent py-5"
+  }`}
 >
-  TRUE HOME <span className="text-gold">BUILDERS</span>
-</span>
+    
+      <div className="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between">
+
+        {/* Logo */}
+        <a href="#top" className="flex items-center gap-3">
+
+          <img
+            src={logo}
+            alt="True Home Builders"
+            className="h-12 w-12 rounded-full object-cover"
+          />
+
+          <span
+           className={`text-lg tracking-wide ${
+  scrolled ? "text-black" : "text-white"
+}`}
+            style={{ fontFamily: "'Antonio', sans-serif" }}
+          >
+            TRUE HOME <span className="text-gold">BUILDERS</span>
+          </span>
+
         </a>
+
+        {/* Navbar */}
         <nav className="hidden md:flex items-center gap-10">
+
           {navLinks.map((l) => (
-            <a key={l.href} href={l.href} className={`nav-link ${scrolled ? "text-black" : "text-white"}`}>
+            <a
+              key={l.href}
+              href={l.href}
+             className={`nav-link ${
+  scrolled ? "text-black" : "text-white"
+}`}
+            >
               {l.label}
             </a>
           ))}
+
         </nav>
-        <a href="#contact" className="hidden md:inline-flex btn-gold-outline" style={{ padding: "0.6rem 1.4rem" }}>
-          Get a Quote
-        </a>
+
+        {/* Right buttons */}
+        <div className="hidden md:flex items-center gap-4">
+
+         <button
+  onClick={() => setDarkMode(!darkMode)}
+  className="
+    p-2
+    rounded-full
+    border
+    border-gold
+    text-gold
+    transition-all
+    duration-300
+    hover:bg-gold
+    hover:border-gold
+    group
+    cursor-pointer
+  "
+>
+  {darkMode ? (
+    <Sun className="w-5 h-5 transition-colors duration-300 group-hover:text-white" />
+  ) : (
+    <Moon className="w-5 h-5 transition-colors duration-300 group-hover:text-white" />
+  )}
+</button>
+
+          <a
+            href="#contact"
+            className="btn-gold-outline"
+            style={{ padding: "0.6rem 1.4rem" }}
+          >
+            Get a Quote
+          </a>
+
+        </div>
+
       </div>
     </header>
   );
 }
-
 function Hero() {
   return (
-    <section id="top" className="relative h-screen min-h-[700px] flex items-center justify-center text-center text-white overflow-hidden">
-      <img src={hero} alt="Luxury home" className="absolute inset-0 w-full h-full object-cover" />
-      <div className="absolute inset-0 bg-black/40" />
-      <div className="relative z-10 max-w-4xl px-6">
-        
-        <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl font-medium leading-[1.05] mb-8">
-          Building Foundations<br />for <span className="italic text-gold">Life.</span>
-        </h1>
-        <p className="text-base md:text-lg text-white/85 max-w-2xl mx-auto mb-12 font-light leading-relaxed">
-          Precision, integrity, and exceptional craftsmanship in every detail.
-        </p>
-        <a href="#portfolio" className="btn-gold-outline">View Our Work</a>
+    <section
+      id="top"
+      className="relative h-screen min-h-[700px] overflow-hidden text-white"
+    >
+      {/* Background Image */}
+      <img
+        src={sunset}
+        alt="Luxury home"
+        className="absolute inset-0 w-full h-full object-cover"
+      />
+
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-black/45"></div>
+
+      {/* Main content */}
+      <div className="relative z-10 h-full flex items-center">
+        <div className="max-w-7xl mx-auto w-full px-10 lg:px-20">
+
+          {/* Left content */}
+          <div className="max-w-[650px] text-left">
+
+            <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl font-medium leading-[1.05] mb-8">
+              Building Foundations
+              <br />
+              for <span className="italic text-gold">Life</span>
+            </h1>
+
+            <p className="text-base md:text-lg text-white/85 mb-12 font-light leading-relaxed max-w-[500px]">
+              Precision, integrity, and exceptional craftsmanship in every detail.
+            </p>
+
+            <a
+              href="#portfolio"
+              className="btn-gold-outline"
+            >
+              View Our Work
+            </a>
+
+          </div>
+
+        </div>
       </div>
+
+      {/* Scroll text */}
       <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 text-xs tracking-[0.3em] text-white/70 uppercase">
         Scroll
       </div>
@@ -119,7 +234,7 @@ function About() {
           <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-tight mb-6">
             Crafting True
             <br />
-            <span className="italic">Value.</span>
+            <span className="italic">Value</span>
           </h2>
 
           <span className="gold-divider mb-8" />
@@ -167,118 +282,61 @@ function About() {
 
       </div>
 
-      {/* New Team Section */}
+    <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto mt-20">
 
-      <div
-  id="team"
-  className="max-w-7xl mx-auto px-6 lg:px-12 mt-40 scroll-mt-32"
->
+  <div className="relative p-6 bg-muted/30 border border-border rounded-xl hover:border-gold transition-all duration-300">
+    <div className="absolute top-0 left-0 w-14 h-1 bg-gold rounded-full"></div>
 
-        <div className="text-center mb-20">
+    <h4 className="font-serif text-xl mb-3">
+      Project Planning
+    </h4>
 
-          <p className="text-gold tracking-[0.3em] text-xs uppercase mb-6">
-            OUR TEAM
-          </p>
+    <p className="text-muted-foreground leading-relaxed text-sm">
+      Strategic planning and execution that keeps every project
+      on schedule and aligned with client expectations.
+    </p>
+  </div>
 
-          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl mb-6">
-            The Dream Team of
-            <br />
-            <span className="italic">
-              True Home Builders
-            </span>
-          </h2>
+  <div className="relative p-6 bg-muted/30 border border-border rounded-xl hover:border-gold transition-all duration-300">
+    <div className="absolute top-0 left-0 w-14 h-1 bg-gold rounded-full"></div>
 
-          <p className="text-muted-foreground max-w-xl mx-auto">
-            Meet the professionals who bring ideas to life and build
-            experiences that last generations.
-          </p>
+    <h4 className="font-serif text-xl mb-3">
+      Architectural Design
+    </h4>
 
-        </div>
+    <p className="text-muted-foreground leading-relaxed text-sm">
+      Creating elegant living spaces that combine functionality,
+      aesthetics, and long-term value.
+    </p>
+  </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+  <div className="relative p-6 bg-muted/30 border border-border rounded-xl hover:border-gold transition-all duration-300">
+    <div className="absolute top-0 left-0 w-14 h-1 bg-gold rounded-full"></div>
 
-          <div className="bg-white rounded-lg overflow-hidden border border-border">
+    <h4 className="font-serif text-xl mb-3">
+      Client Relations
+    </h4>
 
-            <img
-              src={member1}
-              alt=""
-              className="w-full h-[350px] object-cover"
-            />
+    <p className="text-muted-foreground leading-relaxed text-sm">
+      Transparent communication and personalized guidance
+      throughout the home-building journey.
+    </p>
+  </div>
 
-            <div className="p-6">
+  <div className="relative p-6 bg-muted/30 border border-border rounded-xl hover:border-gold transition-all duration-300">
+    <div className="absolute top-0 left-0 w-14 h-1 bg-gold rounded-full"></div>
 
-              <div className="text-gold font-serif text-xl mb-2">
-                
-              </div>
+    <h4 className="font-serif text-xl mb-3">
+      Construction Excellence
+    </h4>
 
-              <h3 className="font-serif text-2xl mb-3">
-                Villa Expert
-              </h3>
+    <p className="text-muted-foreground leading-relaxed text-sm">
+      Superior craftsmanship, quality materials, and strict
+      attention to every detail on site.
+    </p>
+  </div>
 
-              <p className="text-muted-foreground text-sm">
-                Premium residential planning and luxury villa expertise.
-              </p>
-
-            </div>
-
-          </div>
-
-          <div className="bg-white rounded-lg overflow-hidden border border-border">
-
-            <img
-              src={member2}
-              alt=""
-              className="w-full h-[420px] object-cover"
-            />
-
-            <div className="p-6">
-
-              <div className="text-gold font-serif text-xl mb-2">
-                
-              </div>
-
-              <h3 className="font-serif text-2xl mb-3">
-                Design Specialist
-              </h3>
-
-              <p className="text-muted-foreground text-sm">
-                Innovative architecture with elegant and functional design.
-              </p>
-
-            </div>
-
-          </div>
-
-          <div className="bg-white rounded-lg overflow-hidden border border-border">
-
-            <img
-              src={member3}
-              alt=""
-              className="w-full h-[350px] object-cover"
-            />
-
-            <div className="p-6">
-
-              <div className="text-gold font-serif text-xl mb-2">
-                
-              </div>
-
-              <h3 className="font-serif text-2xl mb-3">
-                Project Consultant
-              </h3>
-
-              <p className="text-muted-foreground text-sm">
-                Turning client visions into successful construction projects.
-              </p>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-
+</div>
     </section>
   );
 }
@@ -295,7 +353,7 @@ const services = [
     desc: "Contemporary apartment spaces crafted for stylish and comfortable living.",
   },
   {
-    title: "Villas & Apartments",
+    title: "Open Plots",
     image: villaApartment,
     desc: "Combining elegance and functionality in every residential project.",
   },
@@ -468,29 +526,206 @@ function Portfolio() {
 }
 
 function Contact() {
+  const [submitted, setSubmitted] = useState(false);
+
+  const backToHome = () => {
+    setSubmitted(false);
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
+  const viewPortfolio = () => {
+    setSubmitted(false);
+
+    setTimeout(() => {
+      window.location.hash = "#portfolio";
+    }, 100);
+  };
+
+  const handleSubmit = async (e: any) => {
+    e.preventDefault();
+
+    const form = e.target;
+
+    const data = {
+      name: form.name.value,
+      email: form.email.value,
+      location: form.location.value,
+      phone: form.mobile.value,
+      propertyType: form.property.value,
+      budget: form.budget.value,
+      project: form.message.value,
+    };
+
+    console.log(data);
+
+    try {
+      await fetch(
+        "https://script.google.com/macros/s/AKfycbzdjXi-npphM2Ld1XLsKKT3hFpCz7GBABABdQDl_bRg2vBAeN5H5naoi-vEYy5WqLU1Gw/exec",
+        {
+          method: "POST",
+          mode: "no-cors",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        }
+      );
+
+      form.reset();
+      setSubmitted(true);
+
+      setTimeout(() => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      }, 100);
+
+    } catch (error) {
+      console.error(error);
+      alert("Failed to submit form");
+    }
+  };
+
+  if (submitted) {
+    return (
+      <div
+        className="
+          fixed
+          inset-0
+          z-[9999]
+          bg-background
+          flex
+          flex-col
+          items-center
+          justify-center
+          text-center
+          px-6
+        "
+      >
+        <div className="text-gold text-8xl mb-6">
+          ✓
+        </div>
+
+        <h2 className="font-serif text-5xl md:text-7xl mb-6">
+          Request Submitted Successfully
+        </h2>
+
+        <p className="text-muted-foreground text-xl mb-12">
+          Thank you for choosing True Home Builders.
+          <br />
+          Our team will contact you shortly.
+        </p>
+
+        <div className="flex flex-col sm:flex-row gap-4">
+          <button
+            onClick={viewPortfolio}
+            className="btn-gold-outline"
+          >
+            VIEW PORTFOLIO
+          </button>
+
+          <button
+            onClick={backToHome}
+            className="btn-gold-outline"
+          >
+            BACK TO HOME
+          </button>
+        </div>
+      </div>
+    );
+  }
   return (
-    <section id="contact" className="py-28 md:py-40 bg-muted/40">
+    <section
+      id="contact"
+      className="py-28 md:py-40 bg-muted/40"
+    >
       <div className="max-w-3xl mx-auto px-6 lg:px-12 text-center">
-        <p className="text-gold tracking-[0.3em] text-xs uppercase mb-6">Get In Touch</p>
+        <p className="text-gold tracking-[0.3em] text-xs uppercase mb-6">
+          Get In Touch
+        </p>
+
         <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl mb-6">
           Ready to Build Your <span className="italic">Vision?</span>
         </h2>
+
         <span className="gold-divider mb-8" />
-        <p className="text-muted-foreground mb-14 text-lg">Let's start a conversation.</p>
-        <form className="grid md:grid-cols-2 gap-x-10 gap-y-2 text-left" onSubmit={(e) => e.preventDefault()}>
-          <input className="form-input" placeholder="Name" required />
-          <input className="form-input" type="email" placeholder="Email" required />
-          <input className="form-input md:col-span-2" type="tel" placeholder="Phone" />
-          <textarea className="form-input md:col-span-2" placeholder="Tell us about your project" rows={4} />
+
+        <p className="text-muted-foreground mb-14 text-lg">
+          Let's start a conversation.
+        </p>
+
+        <form
+          onSubmit={handleSubmit}
+          className="grid md:grid-cols-2 gap-x-10 gap-y-2 text-left"
+        >
+          <input
+            name="name"
+            className="form-input"
+            placeholder="Name"
+            required
+          />
+
+          <input
+            name="email"
+            type="email"
+            className="form-input"
+            placeholder="Email"
+            required
+          />
+
+          <input
+            name="location"
+            className="form-input"
+            placeholder="Location"
+            required
+          />
+
+          <input
+            name="mobile"
+            className="form-input"
+            placeholder="Mobile Number"
+            required
+          />
+
+          <input
+            name="property"
+            className="form-input md:col-span-2"
+            placeholder="Property Type (Villa / Apartment)"
+            required
+          />
+
+          <input
+            name="budget"
+            className="form-input md:col-span-2"
+            placeholder="Budget"
+            required
+          />
+
+          <textarea
+            name="message"
+            rows={4}
+            className="form-input md:col-span-2"
+            placeholder="Tell us about your project"
+          />
+
           <div className="md:col-span-2 text-center pt-10">
-            <button type="submit" className="btn-gold-solid">Send Message</button>
+            <button
+              type="submit"
+              className="btn-gold-solid"
+            >
+              Send Message
+            </button>
           </div>
         </form>
       </div>
     </section>
   );
 }
-
 function Footer() {
   return (
     <footer className="bg-black text-white py-16">
@@ -502,8 +737,11 @@ function Footer() {
   className="text-base tracking-wide"
   style={{ fontFamily: "'Antonio', sans-serif" }}
 >
- <span className="text-white">TRUE HOME</span>
-  <span className="text-gold">BUILDERS</span>
+ <span
+  className="text-lg font-antonio tracking-wide"
+>
+  TRUE HOME <span className="text-gold">BUILDERS</span>
+</span>
 </span>
           </div>
           <p className="text-white/60 text-sm leading-relaxed">Precision, integrity, and exceptional craftsmanship since 2001.</p>
@@ -540,3 +778,5 @@ function Index() {
     </main>
   );
 }
+
+export default Index;

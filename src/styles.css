@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Antonio:wght@100..700&display=swap');
-@import "tailwindcss" source(none);
-@source "../src";
+@import "tailwindcss";
 @import "tw-animate-css";
+
+@source "../src";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -14,9 +15,10 @@
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
   --color-border: var(--border);
-  --font-serif: "Playfair Display", Georgia, serif;
+
   --font-sans: "Inter", system-ui, sans-serif;
-  --font-serif: "Antonio", sans-serif;
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-antonio: "Antonio", sans-serif;
 }
 
 :root {
@@ -31,10 +33,24 @@
 }
 
 @layer base {
-  @font-face { font-family: placeholder; src: local("Arial"); }
+  @font-face {
+    font-family: placeholder;
+    src: local("Arial");
+  }
 }
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
 
 body {
   background-color: var(--background);
@@ -43,14 +59,30 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-h1, h2, h3, h4, .font-serif {
+h1,
+h2,
+h3,
+h4,
+.font-serif {
   font-family: "Playfair Display", Georgia, serif;
   letter-spacing: -0.01em;
 }
 
-.text-gold { color: var(--gold); }
-.bg-gold { background-color: var(--gold); }
-.border-gold { border-color: var(--gold); }
+.font-antonio {
+  font-family: "Antonio", sans-serif;
+}
+
+.text-gold {
+  color: var(--gold);
+}
+
+.bg-gold {
+  background-color: var(--gold);
+}
+
+.border-gold {
+  border-color: var(--gold);
+}
 
 .gold-divider {
   display: inline-block;
@@ -73,9 +105,13 @@ h1, h2, h3, h4, .font-serif {
   transition: all 0.3s ease;
   cursor: pointer;
 }
+
 .btn-gold-outline:hover {
   background: var(--gold);
-  color: #fff;
+  color: #fff !important;
+  border-color: var(--gold);
+  box-shadow: 0 0 20px rgba(164, 140, 14, 0.35);
+  transition: all 0.3s ease;
 }
 
 .btn-gold-solid {
@@ -92,7 +128,11 @@ h1, h2, h3, h4, .font-serif {
   cursor: pointer;
   border: 1px solid var(--gold);
 }
-.btn-gold-solid:hover { background: transparent; color: var(--gold); }
+
+.btn-gold-solid:hover {
+  background: transparent;
+  color: var(--gold);
+}
 
 .nav-link {
   position: relative;
@@ -101,7 +141,10 @@ h1, h2, h3, h4, .font-serif {
   text-transform: uppercase;
   transition: color 0.25s ease;
 }
-.nav-link:hover { color: var(--gold); }
+
+.nav-link:hover {
+  color: var(--gold);
+}
 
 .service-card {
   border: 1px solid var(--border);
@@ -109,6 +152,7 @@ h1, h2, h3, h4, .font-serif {
   transition: all 0.4s ease;
   background: #fff;
 }
+
 .service-card:hover {
   transform: translateY(-6px);
   border-color: var(--gold);
@@ -120,6 +164,7 @@ h1, h2, h3, h4, .font-serif {
   overflow: hidden;
   cursor: pointer;
 }
+
 .gallery-item img {
   transition: transform 0.7s ease;
   display: block;
@@ -127,7 +172,11 @@ h1, h2, h3, h4, .font-serif {
   height: 100%;
   object-fit: cover;
 }
-.gallery-item:hover img { transform: scale(1.05); }
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+
 .gallery-item::after {
   content: "";
   position: absolute;
@@ -135,7 +184,10 @@ h1, h2, h3, h4, .font-serif {
   background-color: rgba(164, 140, 14, 0);
   transition: background-color 0.4s ease;
 }
-.gallery-item:hover::after { background-color: rgba(164, 140, 14, 0.3); }
+
+.gallery-item:hover::after {
+  background-color: rgba(164, 140, 14, 0.3);
+}
 
 .form-input {
   width: 100%;
@@ -147,4 +199,144 @@ h1, h2, h3, h4, .font-serif {
   outline: none;
   transition: border-color 0.3s ease;
 }
-.form-input:focus { border-bottom-color: var(--gold); }
+
+.form-input:focus {
+  border-bottom-color: var(--gold);
+}
+
+
+/* Dark Mode */
+
+.dark {
+  --background: #121212;
+  --foreground: #ffffff;
+  --muted: #1a1a1a;
+  --border: #2a2a2a;
+}
+
+/* Card backgrounds in dark mode */
+.dark .service-card,
+.dark .bg-white {
+  background-color: #1e1e1e;
+}
+
+/* Muted text */
+.dark .text-muted-foreground {
+  color: rgba(255,255,255,.7);
+}
+
+/* Footer black in dark mode */
+.dark footer {
+  background: #000 !important;
+  border-top: 1px solid #2a2a2a;
+}
+
+/* Footer text white */
+.dark footer p,
+.dark footer span,
+.dark footer div,
+.dark footer a,
+.dark footer svg {
+  color: whitesmoky !important;
+}
+
+/* Keep BUILDERS gold */
+.dark footer .text-gold {
+  color: #a48c0e !important;
+}
+
+/* Contact icons remain gold */
+.dark footer svg.text-gold,
+.dark footer .lucide-map-pin,
+.dark footer .lucide-phone,
+.dark footer .lucide-mail {
+  color: #a48c0e !important;
+}
+
+/* Social icon hover stays gold */
+.dark footer a:hover,
+.dark footer a:hover svg {
+  color: #a48c0e !important;
+  stroke: #a48c0e !important;
+  transition: color 0.3s ease;
+}
+
+/* Navbar behavior */
+.dark header {
+  background: transparent !important;
+}
+
+.dark header.bg-white {
+  background: white !important;
+}
+
+/* Navbar behavior */
+.dark header {
+  background: transparent !important;
+}
+
+/* When scrolling navbar becomes white */
+.dark header.bg-white {
+  background: white !important;
+}
+
+/* Nav links black */
+.dark header.bg-white .nav-link {
+  color: black !important;
+}
+
+/* TRUE HOME → black */
+.dark header.bg-white .text-lg {
+  color: black !important;
+}
+
+/* BUILDERS → keep gold */
+.dark header.bg-white .text-gold {
+  color: #a48c0e !important;
+}
+
+/* Social icon hover */
+.dark footer a:hover,
+.dark footer a:hover svg {
+  color: #a48c0e !important;
+  stroke: #a48c0e !important;
+  transition: color 0.3s ease;
+}
+
+/* Keep same button hover in dark mode */
+.dark .btn-gold-outline:hover {
+  background: var(--gold) !important;
+  color: #fff !important;
+  border-color: var(--gold) !important;
+  box-shadow: 0 0 20px rgba(164,140,14,0.35);
+}
+
+/* Theme toggle button */
+.theme-toggle{
+  transition: all 0.3s ease;
+  border-radius:9999px;
+}
+
+.theme-toggle:hover{
+  background: var(--gold);
+  color:white !important;
+  border-color: var(--gold);
+  box-shadow:0 0 20px rgba(164,140,14,.35);
+}
+
+/* Sun/Moon icon white on hover */
+.theme-toggle:hover svg{
+  color:white !important;
+}
+
+
+.dark input:-webkit-autofill,
+.dark input:-webkit-autofill:hover,
+.dark input:-webkit-autofill:focus,
+.dark textarea:-webkit-autofill,
+.dark textarea:-webkit-autofill:hover,
+.dark textarea:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 1000px #1e1e1e inset !important;
+  -webkit-text-fill-color: #ffffff !important;
+  caret-color: #ffffff !important;
+}
