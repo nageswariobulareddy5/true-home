@@ -35,6 +35,7 @@ export const Route = createFileRoute("/")({ component: Index });
 
 const navLinks = [
   { label: "About", href: "#about" },
+  { label: "Team", href: "#team" },
   { label: "Expertise", href: "#expertise" },
   { label: "Portfolio", href: "#portfolio" },
   { label: "Contact", href: "#contact" },
@@ -282,71 +283,81 @@ function About() {
 
       </div>
 
-   {/* OUR TEAM */}
+    </section>
+  );
+}
 
-<div className="mt-24 border-t border-border pt-14">
+  function Team() {
+  return (
+    <section
+      id="team"
+      className="py-28 md:py-36 bg-muted/30"
+    >
+      <div className="max-w-6xl mx-auto px-6 lg:px-12">
 
-  <div className="text-center mb-12">
-    <p className="text-gold tracking-[0.3em] text-xs uppercase mb-4">
-      OUR TEAM
-    </p>
+        <div className="text-center mb-16">
+          <p className="text-gold tracking-[0.3em] text-xs uppercase mb-4">
+            OUR TEAM
+          </p>
 
-    <h3 className="font-serif text-3xl md:text-4xl mb-4">
-      Professionals Behind Every
-      <span className="italic text-gold"> Dream Home</span>
-    </h3>
+          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl mb-5">
+            Professionals Behind Every
+            <span className="italic text-gold"> Dream Home</span>
+          </h2>
 
-    <p className="text-muted-foreground max-w-2xl mx-auto">
-      A dedicated team of specialists working together to deliver
-      exceptional homes with precision, creativity, and care.
-    </p>
-  </div>
+          <span className="gold-divider mb-8" />
 
-  <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+          <p className="text-muted-foreground max-w-2xl mx-auto">
+             A dedicated team of specialists working together to deliver
+             exceptional homes with precision, creativity, and care.
+          </p>
+        </div>
 
-    <div className="bg-muted/20 border border-border rounded-xl p-8 text-center hover:border-gold transition-all duration-300">
-      <h4 className="font-serif text-3xl mb-3">
-        Villa Expert
-      </h4>
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
 
-      <p className="text-gold tracking-widest uppercase text-sm">
-        Senior Project Planner
-      </p>
-    </div>
+          <div className="bg-background border border-border rounded-xl p-8 text-center hover:border-gold transition-all duration-300">
+            <h3 className="font-serif text-2xl mb-3">
+              Villa Expert
+            </h3>
 
-    <div className="bg-muted/20 border border-border rounded-xl p-8 text-center hover:border-gold transition-all duration-300">
-      <h4 className="font-serif text-3xl mb-3">
-        Design Specialist
-      </h4>
+            <p className="text-gold uppercase tracking-widest text-sm">
+              Senior Project Planner
+            </p>
+          </div>
 
-      <p className="text-gold tracking-widest uppercase text-sm">
-        Architectural Designer
-      </p>
-    </div>
+          <div className="bg-background border border-border rounded-xl p-8 text-center hover:border-gold transition-all duration-300">
+            <h3 className="font-serif text-2xl mb-3">
+              Design Specialist
+            </h3>
 
-    <div className="bg-muted/20 border border-border rounded-xl p-8 text-center hover:border-gold transition-all duration-300">
-      <h4 className="font-serif text-3xl mb-3">
-        Project Consultant
-      </h4>
+            <p className="text-gold uppercase tracking-widest text-sm">
+              Architectural Designer
+            </p>
+          </div>
 
-      <p className="text-gold tracking-widest uppercase text-sm">
-        Client Relations
-      </p>
-    </div>
+          <div className="bg-background border border-border rounded-xl p-8 text-center hover:border-gold transition-all duration-300">
+            <h3 className="font-serif text-2xl mb-3">
+              Project Consultant
+            </h3>
 
-    <div className="bg-muted/20 border border-border rounded-xl p-8 text-center hover:border-gold transition-all duration-300">
-      <h4 className="font-serif text-3xl mb-3">
-        Construction Manager
-      </h4>
+            <p className="text-gold uppercase tracking-widest text-sm">
+              Client Relations
+            </p>
+          </div>
 
-      <p className="text-gold tracking-widest uppercase text-sm">
-        Site Operations
-      </p>
-    </div>
+          <div className="bg-background border border-border rounded-xl p-8 text-center hover:border-gold transition-all duration-300">
+            <h3 className="font-serif text-2xl mb-3">
+              Construction Manager
+            </h3>
 
-  </div>
+            <p className="text-gold uppercase tracking-widest text-sm">
+              Site Operations
+            </p>
+          </div>
 
-</div>
+        </div>
+
+      </div>
     </section>
   );
 }
@@ -779,12 +790,13 @@ function Index() {
   return (
     <main className="bg-background text-foreground">
       <Header />
-      <Hero />
-      <About />
-      <Services />
-      <Portfolio />
-      <Contact />
-      <Footer />
+<Hero />
+<About />
+<Team />
+<Services />
+<Portfolio />
+<Contact />
+<Footer />
     </main>
   );
 }
