@@ -282,58 +282,68 @@ function About() {
 
       </div>
 
-    <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto mt-20">
+   {/* OUR TEAM */}
 
-  <div className="relative p-6 bg-muted/30 border border-border rounded-xl hover:border-gold transition-all duration-300">
-    <div className="absolute top-0 left-0 w-14 h-1 bg-gold rounded-full"></div>
+<div className="mt-24 border-t border-border pt-14">
 
-    <h4 className="font-serif text-xl mb-3">
-      Project Planning
-    </h4>
+  <div className="text-center mb-12">
+    <p className="text-gold tracking-[0.3em] text-xs uppercase mb-4">
+      OUR TEAM
+    </p>
 
-    <p className="text-muted-foreground leading-relaxed text-sm">
-      Strategic planning and execution that keeps every project
-      on schedule and aligned with client expectations.
+    <h3 className="font-serif text-3xl md:text-4xl mb-4">
+      Professionals Behind Every
+      <span className="italic text-gold"> Dream Home</span>
+    </h3>
+
+    <p className="text-muted-foreground max-w-2xl mx-auto">
+      A dedicated team of specialists working together to deliver
+      exceptional homes with precision, creativity, and care.
     </p>
   </div>
 
-  <div className="relative p-6 bg-muted/30 border border-border rounded-xl hover:border-gold transition-all duration-300">
-    <div className="absolute top-0 left-0 w-14 h-1 bg-gold rounded-full"></div>
+  <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
 
-    <h4 className="font-serif text-xl mb-3">
-      Architectural Design
-    </h4>
+    <div className="bg-muted/20 border border-border rounded-xl p-8 text-center hover:border-gold transition-all duration-300">
+      <h4 className="font-serif text-3xl mb-3">
+        Villa Expert
+      </h4>
 
-    <p className="text-muted-foreground leading-relaxed text-sm">
-      Creating elegant living spaces that combine functionality,
-      aesthetics, and long-term value.
-    </p>
-  </div>
+      <p className="text-gold tracking-widest uppercase text-sm">
+        Senior Project Planner
+      </p>
+    </div>
 
-  <div className="relative p-6 bg-muted/30 border border-border rounded-xl hover:border-gold transition-all duration-300">
-    <div className="absolute top-0 left-0 w-14 h-1 bg-gold rounded-full"></div>
+    <div className="bg-muted/20 border border-border rounded-xl p-8 text-center hover:border-gold transition-all duration-300">
+      <h4 className="font-serif text-3xl mb-3">
+        Design Specialist
+      </h4>
 
-    <h4 className="font-serif text-xl mb-3">
-      Client Relations
-    </h4>
+      <p className="text-gold tracking-widest uppercase text-sm">
+        Architectural Designer
+      </p>
+    </div>
 
-    <p className="text-muted-foreground leading-relaxed text-sm">
-      Transparent communication and personalized guidance
-      throughout the home-building journey.
-    </p>
-  </div>
+    <div className="bg-muted/20 border border-border rounded-xl p-8 text-center hover:border-gold transition-all duration-300">
+      <h4 className="font-serif text-3xl mb-3">
+        Project Consultant
+      </h4>
 
-  <div className="relative p-6 bg-muted/30 border border-border rounded-xl hover:border-gold transition-all duration-300">
-    <div className="absolute top-0 left-0 w-14 h-1 bg-gold rounded-full"></div>
+      <p className="text-gold tracking-widest uppercase text-sm">
+        Client Relations
+      </p>
+    </div>
 
-    <h4 className="font-serif text-xl mb-3">
-      Construction Excellence
-    </h4>
+    <div className="bg-muted/20 border border-border rounded-xl p-8 text-center hover:border-gold transition-all duration-300">
+      <h4 className="font-serif text-3xl mb-3">
+        Construction Manager
+      </h4>
 
-    <p className="text-muted-foreground leading-relaxed text-sm">
-      Superior craftsmanship, quality materials, and strict
-      attention to every detail on site.
-    </p>
+      <p className="text-gold tracking-widest uppercase text-sm">
+        Site Operations
+      </p>
+    </div>
+
   </div>
 
 </div>
