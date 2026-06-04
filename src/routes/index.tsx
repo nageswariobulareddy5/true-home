@@ -289,10 +289,9 @@ function About() {
 
   function Team() {
   return (
-    <section
-      id="team"
-      className="py-28 md:py-36 bg-muted/30"
-    >
+ 
+  <section id="team" className="py-24 md:py-32 bg-muted/30">
+
       <div className="max-w-6xl mx-auto px-6 lg:px-12">
 
         <div className="text-center mb-16">
@@ -300,10 +299,10 @@ function About() {
             OUR TEAM
           </p>
 
-          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl mb-5">
-            Professionals Behind Every
-            <span className="italic text-gold"> Dream Home</span>
-          </h2>
+          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl mb-6 whitespace-nowrap">
+  Professionals Behind Every
+  <span className="italic text-gold"> Dream Home</span>
+</h2>
 
           <span className="gold-divider mb-8" />
 
