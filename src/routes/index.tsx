@@ -572,22 +572,27 @@ const handleSubmit = async (e: any) => {
   try {
     const formData = new FormData();
 
-    formData.append("entry.249874652", form.name.value);
-    formData.append("entry.1097084303", form.email.value);
-    formData.append("entry.1237868596", form.location.value);
-    formData.append("entry.77652021", form.mobile.value);
-    formData.append("entry.257641967", form.property.value);
-    formData.append("entry.664015142", form.budget.value);
-    formData.append("entry.1375262967", form.message.value);
+    const data = {
+  name: form.name.value,
+  email: form.email.value,
+  preferredLocation: form.location.value,
+  mobileNumber: form.mobile.value,
+  propertyType: form.property.value,
+  budgetRange: form.budget.value,
+  propertyRequirement: form.message.value,
+};
 
-    await fetch(
-      "https://docs.google.com/forms/d/e/1FAIpQLSeuqozfd2Msc-8KREXgzhwoQ3T5ZcXoL_1X8YyL_Hi5TeftdQ/formResponse",
-      {
-        method: "POST",
-        mode: "no-cors",
-        body: formData,
-      }
-    );
+await fetch(
+  "https://script.google.com/macros/s/AKfycby2rZngDQUTbtz67gSd9Bbl4MAZf9la-BwMJ3L9yysfLFXbp8hRP6AmPJUnXoW1ntXrKQ/exec",
+  {
+    method: "POST",
+    mode: "no-cors",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  }
+);
 
     form.reset();
     setSubmitted(true);
