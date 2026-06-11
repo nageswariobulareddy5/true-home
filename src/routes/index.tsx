@@ -27,7 +27,7 @@ import pf5 from "../assets/pf5.png";
 import pf6 from "../assets/pf6.png";
 import villa from "../assets/villa.png";
 import apartment from "../assets/apartments.png";
-import villaApartment from "../assets/villa-apartment.jpg";
+import villaApartment from "../assets/villa-apartment.png";
 
 
 
@@ -307,8 +307,8 @@ function About() {
           <span className="gold-divider mb-8" />
 
           <p className="text-muted-foreground max-w-2xl mx-auto">
-             A dedicated team of specialists working together to deliver
-             exceptional homes with precision, creativity, and care.
+              Meet our dedicated team of specialists for expert guidance
+              on building your dream home or choosing the perfect plot.
           </p>
         </div>
 
@@ -375,7 +375,7 @@ const services = [
   {
     title: "Open Plots",
     image: villaApartment,
-    desc: "Combining elegance and functionality in every residential project.",
+    desc: "Premium open plots in promising locations for smart investments and future living.",
   },
 ];
 
@@ -438,8 +438,8 @@ const gallery = [
     src: pf2,
     h: "row-span-2",
     alt: "Villa Project",
-    name: "Sunshine ARKA",
-    location: "Chakrapuri Colony"
+    name: "Sri Sadhguru Nest",
+    location: "Ameenpur"
   },
 
   {
@@ -571,14 +571,14 @@ function Contact() {
     const form = e.target;
 
     const data = {
-      name: form.name.value,
-      email: form.email.value,
-      location: form.location.value,
-      phone: form.mobile.value,
-      propertyType: form.property.value,
-      budget: form.budget.value,
-      project: form.message.value,
-    };
+  name: form.name.value,
+  email: form.email.value,
+  preferredLocation: form.location.value,
+  mobileNumber: form.mobile.value,
+  propertyType: form.property.value,
+  budgetRange: form.budget.value,
+  propertyRequirement: form.message.value,
+};
 
     console.log(data);
 
@@ -694,14 +694,14 @@ function Contact() {
             name="email"
             type="email"
             className="form-input"
-            placeholder="Email"
+            placeholder="Email Address"
             required
           />
 
           <input
             name="location"
             className="form-input"
-            placeholder="Location"
+            placeholder="Preferred Location"
             required
           />
 
@@ -722,7 +722,7 @@ function Contact() {
           <input
             name="budget"
             className="form-input md:col-span-2"
-            placeholder="Budget"
+            placeholder="Budget Range"
             required
           />
 
@@ -730,7 +730,7 @@ function Contact() {
             name="message"
             rows={4}
             className="form-input md:col-span-2"
-            placeholder="Tell us about your project"
+            placeholder="What Type of Property Are You Looking For?"
           />
 
           <div className="md:col-span-2 text-center pt-10">
@@ -769,7 +769,7 @@ function Footer() {
         <div className="text-sm text-white/70 space-y-3">
           <div className="flex items-center gap-3"><MapPin className="w-4 h-4 text-gold" /> 1280 Elm Avenue, Suite 400</div>
           <div className="flex items-center gap-3"><Phone className="w-4 h-4 text-gold" /> (555) 482-1900</div>
-          <div className="flex items-center gap-3"><Mail className="w-4 h-4 text-gold" /> hello@truehomebuilders.com</div>
+          <div className="flex items-center gap-3"><Mail className="w-4 h-4 text-gold" /> truehomebuilders81@gmail.com</div>
         </div>
         <div className="flex md:justify-end gap-5">
           <a href="#" aria-label="Instagram" className="text-white/70 hover:text-gold transition"><Instagram className="w-5 h-5" /></a>
