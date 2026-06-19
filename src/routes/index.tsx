@@ -17,7 +17,6 @@ import {
 } from "lucide-react";
 import logo from "../assets/logo.png";
 import about from "../assets/about.jpg";
-import hero from "../assets/hero.png";
 import sunset from "../assets/sunset.png";
 import pf1 from "../assets/pf1.png";
 import pf2 from "../assets/pf2.png";
@@ -316,41 +315,41 @@ function About() {
 
           <div className="bg-background border border-border rounded-xl p-8 text-center hover:border-gold transition-all duration-300">
             <h3 className="font-serif text-2xl mb-3">
-              Villa Expert
+              K Siva Nagaraju
             </h3>
 
             <p className="text-gold uppercase tracking-widest text-sm">
-              Senior Project Planner
+              Managing Director & Builder
             </p>
           </div>
 
           <div className="bg-background border border-border rounded-xl p-8 text-center hover:border-gold transition-all duration-300">
             <h3 className="font-serif text-2xl mb-3">
-              Design Specialist
+              O Prasad
             </h3>
 
             <p className="text-gold uppercase tracking-widest text-sm">
-              Architectural Designer
+               Managing Director & Builder
             </p>
           </div>
 
           <div className="bg-background border border-border rounded-xl p-8 text-center hover:border-gold transition-all duration-300">
             <h3 className="font-serif text-2xl mb-3">
-              Project Consultant
+              G Hari Teja
             </h3>
 
             <p className="text-gold uppercase tracking-widest text-sm">
-              Client Relations
+              Managing Director & Builder
             </p>
           </div>
 
           <div className="bg-background border border-border rounded-xl p-8 text-center hover:border-gold transition-all duration-300">
             <h3 className="font-serif text-2xl mb-3">
-              Construction Manager
+              S Dinesh
             </h3>
 
             <p className="text-gold uppercase tracking-widest text-sm">
-              Site Operations
+             Managing Director & Builder
             </p>
           </div>
 
@@ -761,14 +760,13 @@ function Footer() {
           <p className="text-white/60 text-sm leading-relaxed">Precision, integrity, and exceptional craftsmanship since 2001.</p>
         </div>
         <div className="text-sm text-white/70 space-y-3">
-          <div className="flex items-center gap-3"><MapPin className="w-4 h-4 text-gold" /> 1280 Elm Avenue, Suite 400</div>
-          <div className="flex items-center gap-3"><Phone className="w-4 h-4 text-gold" /> (555) 482-1900</div>
-          <div className="flex items-center gap-3"><Mail className="w-4 h-4 text-gold" /> truehomebuilders81@gmail.com</div>
+          <div className="flex items-center gap-3"><MapPin className="w-5 h-5 text-gold" /> H No: 5-100293/G1, Shanthi sree nagar, Hyderabad, Telangana 502033</div>
+          <div className="flex items-center gap-3"><Phone className="w-4 h-4 text-gold" /> (+91) 88868 69900</div>
+          <div className="flex items-center gap-3"><Mail className="w-4 h-4 text-gold" /> truehomebuilders18@gmail.com</div>
         </div>
         <div className="flex md:justify-end gap-5">
-          <a href="#" aria-label="Instagram" className="text-white/70 hover:text-gold transition"><Instagram className="w-5 h-5" /></a>
-          <a href="#" aria-label="Facebook" className="text-white/70 hover:text-gold transition"><Facebook className="w-5 h-5" /></a>
-          <a href="#" aria-label="LinkedIn" className="text-white/70 hover:text-gold transition"><Linkedin className="w-5 h-5" /></a>
+          <a href="https://www.instagram.com/truehome_builders?igsh=cHY3bG16YmEzbTRi" aria-label="Instagram" className="text-white/70 hover:text-gold transition"><Instagram className="w-5 h-5" /></a>
+          
         </div>
       </div>
       <div className="max-w-7xl mx-auto px-6 lg:px-12 mt-12 pt-8 border-t border-white/10 text-xs text-white/40 flex flex-col md:flex-row justify-between gap-2">
