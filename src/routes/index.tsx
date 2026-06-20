@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState, useRef } from "react";
-import emailjs from "@emailjs/browser";
+import { Helmet } from "react-helmet-async";
 import "@fontsource/antonio";
 import {
   Home,
@@ -161,7 +161,7 @@ function Hero() {
       {/* Background Image */}
       <img
         src={sunset}
-        alt="Luxury home"
+        alt="True Home Builders luxury villa project in Hyderabad"
         className="absolute inset-0 w-full h-full object-cover"
       />
 
@@ -780,6 +780,54 @@ function Footer() {
 function Index() {
   return (
     <main className="bg-background text-foreground">
+      <Helmet>
+  <title>
+    True Home Builders | Villas, Apartments & Open Plots in Hyderabad
+  </title>
+
+
+  <meta
+    name="description"
+    content="True Home Builders offers premium villas, apartments, and open plots in Hyderabad with quality construction and trusted service."
+  />
+
+  <meta
+    name="keywords"
+    content="True Home Builders, Hyderabad builders, villas, apartments, open plots"
+  />
+
+  <meta property="og:title" content="True Home Builders" />
+  <meta
+    property="og:description"
+    content="Premium construction and real estate services."
+  />
+ <meta property="og:url" content="https://truehomebuilders.in" />
+
+<link
+  rel="canonical"
+  href="https://truehomebuilders.in"
+/>
+
+  <script type="application/ld+json">
+{`
+{
+  "@context":"https://schema.org",
+  "@type":"LocalBusiness",
+  "name":"True Home Builders",
+  "url":"https://truehomebuilders.in",
+  "telephone":"+91 8886869900",
+  "address":{
+    "@type":"PostalAddress",
+    "streetAddress":"Shanthi Sree Nagar",
+    "addressLocality":"Hyderabad",
+    "addressRegion":"Telangana",
+    "postalCode":"502033",
+    "addressCountry":"IN"
+  }
+}
+`}
+</script>
+</Helmet>
       <Header />
 <Hero />
 <About />
