@@ -760,7 +760,7 @@ function Footer() {
           <p className="text-white/60 text-sm leading-relaxed">Precision, integrity, and exceptional craftsmanship since 2001.</p>
         </div>
         <div className="text-sm text-white/70 space-y-3">
-          <div className="flex items-center gap-3"><MapPin className="w-5 h-5 text-gold" /> H No: 5-100293/G1, Shanthi sree nagar, Hyderabad, Telangana 502033</div>
+          <div className="flex items-center gap-3"><MapPin className="w-5 h-5 text-gold" /> H No: 5-100293/G1, Shanthi Sree Nagar, Hyderabad, Telangana 502033</div>
           <div className="flex items-center gap-3"><Phone className="w-4 h-4 text-gold" /> (+91) 88868 69900</div>
           <div className="flex items-center gap-3"><Mail className="w-4 h-4 text-gold" /> truehomebuilders18@gmail.com</div>
         </div>
