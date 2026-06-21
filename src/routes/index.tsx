@@ -780,7 +780,7 @@ function Footer() {
 function Index() {
   return (
     <main className="bg-background text-foreground">
-      <Helmet>
+     <Helmet>
   <title>
     True Home Builders | Villas, Apartments & Open Plots in Hyderabad
   </title>
@@ -827,19 +827,19 @@ function Index() {
     {`
     {
       "@context":"https://schema.org",
-      "@type":"LocalBusiness",
-      "name":"True Home Builders",
-      "image":"https://truehomebuilders.in/logo.png",
-      "logo":"https://truehomebuilders.in/logo.png",
-      "url":"https://truehomebuilders.in",
-      "telephone":"+91 8886869900",
-      "address":{
-        "@type":"PostalAddress",
-        "streetAddress":"Shanthi Sree Nagar",
-        "addressLocality":"Hyderabad",
-        "addressRegion":"Telangana",
-        "postalCode":"502033",
-        "addressCountry":"IN"
+  "@type":"LocalBusiness",
+  "name":"True Home Builders",
+  "url":"https://truehomebuilders.in",
+  "image":"https://truehomebuilders.in/logo.png",
+  "logo":"https://truehomebuilders.in/logo.png",
+  "telephone":"+91 8886869900",
+  "address":{
+    "@type":"PostalAddress",
+    "streetAddress":"Shanthi Sree Nagar",
+    "addressLocality":"Hyderabad",
+    "addressRegion":"Telangana",
+    "postalCode":"502033",
+    "addressCountry":"IN"
       }
     }
     `}
