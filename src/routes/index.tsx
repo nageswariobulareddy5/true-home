@@ -785,48 +785,65 @@ function Index() {
     True Home Builders | Villas, Apartments & Open Plots in Hyderabad
   </title>
 
-
   <meta
     name="description"
-    content="True Home Builders offers premium villas, apartments, and open plots in Hyderabad with quality construction and trusted service."
+    content="True Home Builders offers premium villas, apartments, and open plots in Hyderabad with quality construction, trusted service, and exceptional craftsmanship."
   />
 
   <meta
     name="keywords"
-    content="True Home Builders, Hyderabad builders, villas, apartments, open plots"
+    content="True Home Builders, Hyderabad builders, villas, apartments, open plots, construction company Hyderabad"
   />
 
   <meta property="og:title" content="True Home Builders" />
+
   <meta
     property="og:description"
-    content="Premium construction and real estate services."
+    content="Premium villas, apartments, and open plots in Hyderabad."
   />
- <meta property="og:url" content="https://truehomebuilders.in" />
 
-<link
-  rel="canonical"
-  href="https://truehomebuilders.in"
-/>
+  <meta
+    property="og:image"
+    content="https://truehomebuilders.in/logo.png"
+  />
+
+  <meta
+    property="og:url"
+    content="https://truehomebuilders.in"
+  />
+
+  <link
+    rel="canonical"
+    href="https://truehomebuilders.in"
+  />
+
+  <link
+    rel="icon"
+    type="image/png"
+    href="/favicon.png"
+  />
 
   <script type="application/ld+json">
-{`
-{
-  "@context":"https://schema.org",
-  "@type":"LocalBusiness",
-  "name":"True Home Builders",
-  "url":"https://truehomebuilders.in",
-  "telephone":"+91 8886869900",
-  "address":{
-    "@type":"PostalAddress",
-    "streetAddress":"Shanthi Sree Nagar",
-    "addressLocality":"Hyderabad",
-    "addressRegion":"Telangana",
-    "postalCode":"502033",
-    "addressCountry":"IN"
-  }
-}
-`}
-</script>
+    {`
+    {
+      "@context":"https://schema.org",
+      "@type":"LocalBusiness",
+      "name":"True Home Builders",
+      "image":"https://truehomebuilders.in/logo.png",
+      "logo":"https://truehomebuilders.in/logo.png",
+      "url":"https://truehomebuilders.in",
+      "telephone":"+91 8886869900",
+      "address":{
+        "@type":"PostalAddress",
+        "streetAddress":"Shanthi Sree Nagar",
+        "addressLocality":"Hyderabad",
+        "addressRegion":"Telangana",
+        "postalCode":"502033",
+        "addressCountry":"IN"
+      }
+    }
+    `}
+  </script>
 </Helmet>
       <Header />
 <Hero />
