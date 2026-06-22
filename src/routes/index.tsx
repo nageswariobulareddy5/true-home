@@ -557,6 +557,7 @@ const gallery = [
 ];
 
 function Portfolio() {
+  const [activeProject, setActiveProject] = useState<number | null>(null);
   return (
     <section id="portfolio" className="py-28 md:py-40 bg-background">
 
@@ -580,11 +581,13 @@ function Portfolio() {
 
           {gallery.map((g, i) => (
 
-            <div
-              key={i}
-              className={`gallery-item ${g.h} relative overflow-hidden group`}
-            >
-
+           <div
+  key={i}
+  onClick={() =>
+    setActiveProject(activeProject === i ? null : i)
+  }
+  className={`gallery-item ${g.h} relative overflow-hidden group cursor-pointer`}
+>
               <img
                 src={g.src}
                 alt={g.alt}
@@ -593,16 +596,29 @@ function Portfolio() {
               />
 
               {/* Hover Overlay */}
+<div
+  className={`
+    absolute inset-0
+    bg-black/60
+    flex flex-col justify-end
+    p-4 md:p-6
+    transition-all duration-500
 
-              <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-6">
+    ${
+      activeProject === i
+        ? "opacity-100"
+        : "opacity-0 md:group-hover:opacity-100"
+    }
+  `}
+>
 
-                <h3 className="font-serif text-white text-2xl mb-2">
-                  {g.name}
-                </h3>
+               <h3 className="font-serif text-white text-lg md:text-2xl mb-2">
+  {g.name}
+</h3>
 
-                <p className="text-white/80 text-sm">
-                  📍 {g.location}
-                </p>
+<p className="text-white/80 text-sm">
+  📍 {g.location}
+</p>
 
               </div>
 
