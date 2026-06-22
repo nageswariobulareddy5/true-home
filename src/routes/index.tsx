@@ -13,7 +13,9 @@ import {
   Facebook,
   Linkedin,
   Sun,
-  Moon
+  Moon,
+  Menu,
+  X
 } from "lucide-react";
 import logo from "../assets/logo.png";
 import about from "../assets/about.jpg";
@@ -46,6 +48,7 @@ function Header() {
   const [darkMode, setDarkMode] = useState(
     localStorage.getItem("theme") === "dark"
   );
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -73,7 +76,7 @@ function Header() {
   }`}
 >
     
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 flex items-center justify-between">
 
         {/* Logo */}
         <a href="#top" className="flex items-center gap-3">
@@ -85,7 +88,7 @@ function Header() {
           />
 
           <span
-           className={`text-lg tracking-wide ${
+className={`text-sm sm:text-base md:text-lg tracking-wide ${
   scrolled ? "text-black" : "text-white"
 }`}
             style={{ fontFamily: "'Antonio', sans-serif" }}
@@ -94,6 +97,16 @@ function Header() {
           </span>
 
         </a>
+
+        {/* Mobile Menu Button */}
+<button
+  onClick={() => setMenuOpen(!menuOpen)}
+  className={`md:hidden ${
+    scrolled ? "text-black" : "text-white"
+  }`}
+>
+  {menuOpen ? <X size={28} /> : <Menu size={28} />}
+</button>
 
         {/* Navbar */}
         <nav className="hidden md:flex items-center gap-10">
@@ -111,6 +124,52 @@ function Header() {
           ))}
 
         </nav>
+
+
+{menuOpen && (
+  <div className="absolute top-full left-0 w-full bg-white shadow-lg md:hidden">
+    <div className="flex flex-col p-6 gap-6">
+
+      {navLinks.map((l) => (
+        <a
+          key={l.href}
+          href={l.href}
+          onClick={() => setMenuOpen(false)}
+          className="text-black uppercase tracking-widest text-sm"
+        >
+          {l.label}
+        </a>
+      ))}
+
+      <button
+        onClick={() => setDarkMode(!darkMode)}
+        className="flex items-center gap-2 text-black"
+      >
+        {darkMode ? (
+          <>
+            <Sun size={18} />
+            Light Mode
+          </>
+        ) : (
+          <>
+            <Moon size={18} />
+            Dark Mode
+          </>
+        )}
+      </button>
+
+      <a
+        href="#contact"
+        onClick={() => setMenuOpen(false)}
+        className="btn-gold-outline text-center"
+      >
+        Get a Quote
+      </a>
+
+    </div>
+  </div>
+)}
+
 
         {/* Right buttons */}
         <div className="hidden md:flex items-center gap-4">
@@ -156,38 +215,54 @@ function Hero() {
   return (
     <section
       id="top"
-      className="relative h-screen min-h-[700px] overflow-hidden text-white"
+      className="relative h-screen overflow-hidden text-white"
     >
       {/* Background Image */}
       <img
         src={sunset}
-        alt="True Home Builders luxury villa project in Hyderabad"
-        className="absolute inset-0 w-full h-full object-cover"
+        alt="True Home Builders luxury villa project"
+        className="absolute inset-0 w-full h-full object-cover object-center"
       />
 
-      {/* Dark overlay */}
-      <div className="absolute inset-0 bg-black/45"></div>
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-black/50"></div>
 
-      {/* Main content */}
-      <div className="relative z-10 h-full flex items-center">
-        <div className="max-w-7xl mx-auto w-full px-10 lg:px-20">
+      {/* Content */}
+      <div className="relative z-10 flex items-center h-full">
+        <div className="max-w-7xl mx-auto w-full px-8 lg:px-20">
 
-          {/* Left content */}
-          <div className="max-w-[650px] text-left">
+          <div className="max-w-[320px] sm:max-w-[500px]">
 
-            <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl font-medium leading-[1.05] mb-8">
+            <h1 className="
+              font-serif
+              text-[2.5rem]
+              sm:text-5xl
+              md:text-7xl
+              lg:text-8xl
+              leading-[1.05]
+              mb-5
+            ">
               Building Foundations
               <br />
               for <span className="italic text-gold">Life</span>
             </h1>
 
-            <p className="text-base md:text-lg text-white/85 mb-12 font-light leading-relaxed max-w-[500px]">
+            <p className="
+              text-sm
+              sm:text-base
+              md:text-lg
+              text-white/90
+              leading-7
+              mb-8
+              max-w-[280px]
+              sm:max-w-[450px]
+            ">
               Precision, integrity, and exceptional craftsmanship in every detail.
             </p>
 
             <a
               href="#portfolio"
-              className="btn-gold-outline"
+              className="btn-gold-outline inline-flex"
             >
               View Our Work
             </a>
@@ -197,14 +272,13 @@ function Hero() {
         </div>
       </div>
 
-      {/* Scroll text */}
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 text-xs tracking-[0.3em] text-white/70 uppercase">
+      {/* Scroll */}
+      <div className="absolute bottom-5 left-1/2 -translate-x-1/2 text-xs tracking-[0.3em] text-white/70 uppercase">
         Scroll
       </div>
     </section>
   );
 }
-
 function About() {
   return (
     <section id="about" className="py-28 md:py-40 bg-background">
@@ -220,7 +294,7 @@ function About() {
             width={1200}
             height={1400}
             loading="lazy"
-            className="w-full h-[600px] object-cover"
+            className="w-full h-[350px] md:h-[600px] object-cover"
           />
           <div className="absolute -bottom-6 -right-6 hidden md:block w-32 h-32 border border-gold" />
         </div>
@@ -250,7 +324,7 @@ function About() {
             that is the "True" in our name, and the standard we hold ourselves to with every project.
           </p>
 
-          <div className="grid grid-cols-3 gap-6 border-t border-border pt-8">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 border-t border-border pt-8">
 
             <div>
               <div className="font-serif text-4xl text-gold">
@@ -298,7 +372,7 @@ function About() {
             OUR TEAM
           </p>
 
-          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl mb-6 whitespace-nowrap">
+          <h2 className="font-serif text-3xl md:text-5xl lg:text-6xl mb-6">
   Professionals Behind Every
   <span className="italic text-gold"> Dream Home</span>
 </h2>
@@ -395,7 +469,7 @@ function Services() {
           <span className="gold-divider" />
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
 
           {services.map((s) => (
             <div
@@ -502,7 +576,7 @@ function Portfolio() {
 
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 auto-rows-[260px] md:auto-rows-[300px] gap-4 md:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 auto-rows-[260px] md:auto-rows-[300px] gap-4 md:gap-6">
 
           {gallery.map((g, i) => (
 
@@ -622,11 +696,11 @@ await fetch(
           ✓
         </div>
 
-        <h2 className="font-serif text-5xl md:text-7xl mb-6">
+        <h2 className="font-serif text-3xl sm:text-5xl md:text-7xl mb-6">
           Request Submitted Successfully
         </h2>
 
-        <p className="text-muted-foreground text-xl mb-12">
+        <p className="text-muted-foreground text-base md:text-xl mb-12">
           Thank you for choosing True Home Builders.
           <br />
           Our team will contact you shortly.
@@ -759,7 +833,7 @@ function Footer() {
           </div>
           <p className="text-white/60 text-sm leading-relaxed">Precision, integrity, and exceptional craftsmanship since 2001.</p>
         </div>
-        <div className="text-sm text-white/70 space-y-3">
+       <div className="text-sm text-white/70 space-y-3 break-words">
           <div className="flex items-center gap-3"><MapPin className="w-5 h-5 text-gold" /> H No: 5-100293/G1, Shanthi Sree Nagar, Hyderabad, Telangana 502033</div>
           <div className="flex items-center gap-3"><Phone className="w-4 h-4 text-gold" /> (+91) 88868 69900</div>
           <div className="flex items-center gap-3"><Mail className="w-4 h-4 text-gold" /> truehomebuilders18@gmail.com</div>
@@ -811,6 +885,8 @@ function Index() {
     property="og:url"
     content="https://truehomebuilders.in"
   />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
 
   <link
     rel="canonical"
