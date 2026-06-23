@@ -262,16 +262,16 @@ function Hero() {
       <div className="relative z-10 h-full flex items-center">
         <div className="max-w-7xl mx-auto w-full px-6 sm:px-8 lg:px-20">
 
-          <div className="max-w-[650px] mt-44 md:mt-0">
+          <div className="max-w-[650px] mt-20 md:mt-0">
 
             <h1
               className="
                 font-serif
-                text-4xl
+                text-[2.8rem]
                 sm:text-5xl
                 md:text-7xl
                 lg:text-8xl
-                leading-tight
+                leading-[1.05]
                 mb-5
               "
             >
@@ -282,18 +282,19 @@ function Hero() {
 
             <p
               className="
-                text-sm
+                text-base
                 sm:text-base
                 md:text-lg
                 text-white/90
                 font-light
                 leading-relaxed
                 mb-8
-                max-w-[300px]
+                max-w-[320px]
                 sm:max-w-[500px]
               "
             >
-              Precision, integrity, and exceptional craftsmanship in every detail.
+              Precision, integrity, and exceptional craftsmanship
+              in every detail.
             </p>
 
             <a
@@ -304,17 +305,16 @@ function Hero() {
             </a>
 
           </div>
+
         </div>
       </div>
 
-      {/* Scroll Text */}
-      <div className="absolute bottom-5 left-1/2 -translate-x-1/2 z-10 text-xs tracking-[0.3em] text-white/70 uppercase">
-        Scroll
-      </div>
+     <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 text-xs tracking-[0.3em] text-white/70 uppercase">
+  Scroll
+</div>
     </section>
   );
 }
-
 function About() {
   return (
     <section id="about" className="py-28 md:py-40 bg-background">
