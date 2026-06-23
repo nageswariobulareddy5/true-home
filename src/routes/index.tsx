@@ -255,8 +255,7 @@ function Hero() {
         className="block md:hidden absolute inset-0 w-full h-full object-cover"
       />
 
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-black/40 md:bg-black/45"></div>
+      
 
       {/* Content */}
       <div className="relative z-10 h-full flex items-center">
@@ -309,7 +308,8 @@ function Hero() {
         </div>
       </div>
 
-     <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 text-xs tracking-[0.3em] text-white/70 uppercase">
+   {/* Scroll Text */}
+<div className="absolute bottom-5 left-1/2 -translate-x-1/2 z-10 text-xs tracking-[0.3em] text-white/70 uppercase">
   Scroll
 </div>
     </section>
