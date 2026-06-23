@@ -17,15 +17,30 @@ import {
   Menu,
   X
 } from "lucide-react";
+
+
+import { Swiper, SwiperSlide } from "swiper/react";
+import { EffectCoverflow } from "swiper/modules";
+
+import "swiper/css";
+import "swiper/css/effect-coverflow";
+
 import logo from "../assets/logo.png";
 import about from "../assets/about.jpg";
 import sunset from "../assets/sunset.png";
+import mobileHero from "../assets/mobile-hero.png";
 import pf1 from "../assets/pf1.png";
 import pf2 from "../assets/pf2.png";
 import pf3 from "../assets/pf3.png";
 import pf4 from "../assets/pf4.png";
 import pf5 from "../assets/pf5.png";
 import pf6 from "../assets/pf6.png";
+import pf1mobile from "../assets/pf1-mobile.png";
+import pf2mobile from "../assets/pf2-mobile.png";
+import pf3mobile from "../assets/pf3-mobile.png";
+import pf4mobile from "../assets/pf4-mobile.png";
+import pf5mobile from "../assets/pf5-mobile.png";
+import pf6mobile from "../assets/pf6-mobile.png";
 import villa from "../assets/villa.png";
 import apartment from "../assets/apartments.png";
 import villaApartment from "../assets/villa-apartment.png";
@@ -127,7 +142,11 @@ className={`text-sm sm:text-base md:text-lg tracking-wide ${
 
 
 {menuOpen && (
-  <div className="absolute top-full left-0 w-full bg-white shadow-lg md:hidden">
+  <div
+    className={`absolute top-full left-0 w-full md:hidden shadow-lg transition-colors duration-300 ${
+      darkMode ? "bg-[#111111]" : "bg-white"
+    }`}
+  >
     <div className="flex flex-col p-6 gap-6">
 
       {navLinks.map((l) => (
@@ -135,7 +154,9 @@ className={`text-sm sm:text-base md:text-lg tracking-wide ${
           key={l.href}
           href={l.href}
           onClick={() => setMenuOpen(false)}
-          className="text-black uppercase tracking-widest text-sm"
+          className={`uppercase tracking-widest text-sm transition-colors ${
+            darkMode ? "text-white" : "text-black"
+          }`}
         >
           {l.label}
         </a>
@@ -143,7 +164,9 @@ className={`text-sm sm:text-base md:text-lg tracking-wide ${
 
       <button
         onClick={() => setDarkMode(!darkMode)}
-        className="flex items-center gap-2 text-black"
+        className={`flex items-center gap-2 transition-colors ${
+          darkMode ? "text-white" : "text-black"
+        }`}
       >
         {darkMode ? (
           <>
@@ -211,52 +234,65 @@ className={`text-sm sm:text-base md:text-lg tracking-wide ${
     </header>
   );
 }
+
 function Hero() {
   return (
     <section
       id="top"
-      className="relative h-screen overflow-hidden text-white"
+      className="relative h-screen md:min-h-screen overflow-hidden text-white"
     >
-      {/* Background Image */}
+      {/* Desktop Hero */}
       <img
         src={sunset}
-        alt="True Home Builders luxury villa project"
-        className="absolute inset-0 w-full h-full object-cover object-center"
+        alt="True Home Builders luxury project"
+        className="hidden md:block absolute inset-0 w-full h-full object-cover"
+      />
+
+      {/* Mobile Hero */}
+      <img
+        src={mobileHero}
+        alt="True Home Builders mobile hero"
+        className="block md:hidden absolute inset-0 w-full h-full object-cover"
       />
 
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black/50"></div>
+      <div className="absolute inset-0 bg-black/40 md:bg-black/45"></div>
 
       {/* Content */}
-      <div className="relative z-10 flex items-center h-full">
-        <div className="max-w-7xl mx-auto w-full px-8 lg:px-20">
+      <div className="relative z-10 h-full flex items-center">
+        <div className="max-w-7xl mx-auto w-full px-6 sm:px-8 lg:px-20">
 
-          <div className="max-w-[320px] sm:max-w-[500px]">
+          <div className="max-w-[650px] mt-44 md:mt-0">
 
-            <h1 className="
-              font-serif
-              text-[2.5rem]
-              sm:text-5xl
-              md:text-7xl
-              lg:text-8xl
-              leading-[1.05]
-              mb-5
-            ">
+            <h1
+              className="
+                font-serif
+                text-4xl
+                sm:text-5xl
+                md:text-7xl
+                lg:text-8xl
+                leading-tight
+                mb-5
+              "
+            >
               Building Foundations
               <br />
               for <span className="italic text-gold">Life</span>
             </h1>
 
-            <p className="
-              text-sm
-              sm:text-base
-              md:text-lg
-              text-white/90
-              leading-7
-              mb-8
-              max-w-[280px]
-              sm:max-w-[450px]
-            ">
+            <p
+              className="
+                text-sm
+                sm:text-base
+                md:text-lg
+                text-white/90
+                font-light
+                leading-relaxed
+                mb-8
+                max-w-[300px]
+                sm:max-w-[500px]
+              "
+            >
               Precision, integrity, and exceptional craftsmanship in every detail.
             </p>
 
@@ -268,17 +304,17 @@ function Hero() {
             </a>
 
           </div>
-
         </div>
       </div>
 
-      {/* Scroll */}
-      <div className="absolute bottom-5 left-1/2 -translate-x-1/2 text-xs tracking-[0.3em] text-white/70 uppercase">
+      {/* Scroll Text */}
+      <div className="absolute bottom-5 left-1/2 -translate-x-1/2 z-10 text-xs tracking-[0.3em] text-white/70 uppercase">
         Scroll
       </div>
     </section>
   );
 }
+
 function About() {
   return (
     <section id="about" className="py-28 md:py-40 bg-background">
@@ -360,70 +396,69 @@ function About() {
   );
 }
 
-  function Team() {
+ function Team() {
   return (
- 
-  <section id="team" className="py-24 md:py-32 bg-muted/30">
+    <section id="team" className="py-24 md:py-32 bg-muted/30">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
 
-      <div className="max-w-6xl mx-auto px-6 lg:px-12">
-
-        <div className="text-center mb-16">
+        <div className="text-center mb-12 md:mb-16">
           <p className="text-gold tracking-[0.3em] text-xs uppercase mb-4">
             OUR TEAM
           </p>
 
           <h2 className="font-serif text-3xl md:text-5xl lg:text-6xl mb-6">
-  Professionals Behind Every
-  <span className="italic text-gold"> Dream Home</span>
-</h2>
+            Professionals Behind Every
+            <span className="italic text-gold"> Dream Home</span>
+          </h2>
 
           <span className="gold-divider mb-8" />
 
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-              Meet our dedicated team of specialists for expert guidance
-              on building your dream home or choosing the perfect plot.
+          <p className="text-muted-foreground max-w-2xl mx-auto text-sm md:text-base">
+            Meet our dedicated team of specialists for expert guidance
+            on building your dream home or choosing the perfect plot.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* Team Cards */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6">
 
-          <div className="bg-background border border-border rounded-xl p-8 text-center hover:border-gold transition-all duration-300">
-            <h3 className="font-serif text-2xl mb-3">
+          <div className="bg-background border border-border rounded-lg p-4 md:p-8 min-h-[120px] md:min-h-[220px] flex flex-col justify-center text-center hover:border-gold transition-all duration-300">
+            <h3 className="font-serif text-base md:text-2xl mb-2">
               K Siva Nagaraju
             </h3>
 
-            <p className="text-gold uppercase tracking-widest text-sm">
+            <p className="text-gold uppercase tracking-[0.15em] text-[9px] md:text-sm leading-relaxed">
               Managing Director & Builder
             </p>
           </div>
 
-          <div className="bg-background border border-border rounded-xl p-8 text-center hover:border-gold transition-all duration-300">
-            <h3 className="font-serif text-2xl mb-3">
+          <div className="bg-background border border-border rounded-lg p-4 md:p-8 min-h-[120px] md:min-h-[220px] flex flex-col justify-center text-center hover:border-gold transition-all duration-300">
+            <h3 className="font-serif text-base md:text-2xl mb-2">
               O Prasad
             </h3>
 
-            <p className="text-gold uppercase tracking-widest text-sm">
-               Managing Director & Builder
-            </p>
-          </div>
-
-          <div className="bg-background border border-border rounded-xl p-8 text-center hover:border-gold transition-all duration-300">
-            <h3 className="font-serif text-2xl mb-3">
-              G Hari Teja
-            </h3>
-
-            <p className="text-gold uppercase tracking-widest text-sm">
+            <p className="text-gold uppercase tracking-[0.15em] text-[9px] md:text-sm leading-relaxed">
               Managing Director & Builder
             </p>
           </div>
 
-          <div className="bg-background border border-border rounded-xl p-8 text-center hover:border-gold transition-all duration-300">
-            <h3 className="font-serif text-2xl mb-3">
+          <div className="bg-background border border-border rounded-lg p-4 md:p-8 min-h-[120px] md:min-h-[220px] flex flex-col justify-center text-center hover:border-gold transition-all duration-300">
+            <h3 className="font-serif text-base md:text-2xl mb-2">
+              G Hari Teja
+            </h3>
+
+            <p className="text-gold uppercase tracking-[0.15em] text-[9px] md:text-sm leading-relaxed">
+              Managing Director & Builder
+            </p>
+          </div>
+
+          <div className="bg-background border border-border rounded-lg p-4 md:p-8 min-h-[120px] md:min-h-[220px] flex flex-col justify-center text-center hover:border-gold transition-all duration-300">
+            <h3 className="font-serif text-base md:text-2xl mb-2">
               S Dinesh
             </h3>
 
-            <p className="text-gold uppercase tracking-widest text-sm">
-             Managing Director & Builder
+            <p className="text-gold uppercase tracking-[0.15em] text-[9px] md:text-sm leading-relaxed">
+              Managing Director & Builder
             </p>
           </div>
 
@@ -509,6 +544,7 @@ function Services() {
 const gallery = [
   {
     src: pf2,
+    mobile: pf2mobile,
     h: "row-span-2",
     alt: "Villa Project",
     name: "Sri Sadhguru Nest",
@@ -517,6 +553,7 @@ const gallery = [
 
   {
     src: pf1,
+    mobile: pf1mobile,
     h: "",
     alt: "Apartment Project",
     name: "Dhanujaya Elite",
@@ -525,6 +562,7 @@ const gallery = [
 
   {
     src: pf4,
+    mobile: pf4mobile,
     h: "",
     alt: "Residential Project",
     name: "Trident",
@@ -533,6 +571,7 @@ const gallery = [
 
   {
     src: pf3,
+    mobile: pf3mobile,
     h: "row-span-2",
     alt: "Interior Project",
     name: "Balaji Platina",
@@ -541,6 +580,7 @@ const gallery = [
 
   {
     src: pf5,
+    mobile: pf5mobile,
     h: "",
     alt: "Modern Project",
     name: "Ameya Pearl",
@@ -549,6 +589,7 @@ const gallery = [
 
   {
     src: pf6,
+    mobile: pf6mobile,
     h: "",
     alt: "Premium Project",
     name: "Green Rich Country",
@@ -557,14 +598,15 @@ const gallery = [
 ];
 
 function Portfolio() {
-  const [activeProject, setActiveProject] = useState<number | null>(null);
+ const swiperRef = useRef<any>(null);
+
+ 
+
   return (
     <section id="portfolio" className="py-28 md:py-40 bg-background">
-
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
 
         <div className="text-center mb-20">
-
           <p className="text-gold tracking-[0.3em] text-xs uppercase mb-6">
             Our Work
           </p>
@@ -574,62 +616,126 @@ function Portfolio() {
           </h2>
 
           <span className="gold-divider" />
-
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 auto-rows-[260px] md:auto-rows-[300px] gap-4 md:gap-6">
+ <div className="relative md:hidden">
 
+  <Swiper
+    effect={"coverflow"}
+    grabCursor={true}
+    centeredSlides={true}
+    slidesPerView={1.3}
+    loop={true}
+    onSwiper={(swiper) => (swiperRef.current = swiper)}
+    coverflowEffect={{
+      rotate: 0,
+      stretch: 0,
+      depth: 150,
+      modifier: 2,
+      scale: 0.85,
+      slideShadows: false,
+    }}
+    modules={[EffectCoverflow]}
+  >
+    {gallery.map((g, i) => (
+      <SwiperSlide key={i}>
+        <div className="relative overflow-hidden">
+
+          <img
+            src={g.mobile}
+            alt={g.alt}
+            className="w-full h-[450px] object-cover"
+          />
+
+          <div className="absolute inset-0 bg-black/30" />
+
+          <div className="absolute bottom-6 left-0 right-0 text-center">
+            <h3 className="font-serif text-white text-2xl">
+              {g.name}
+            </h3>
+
+            <p className="text-white/80 text-sm">
+              📍 {g.location}
+            </p>
+          </div>
+
+        </div>
+      </SwiperSlide>
+    ))}
+  </Swiper>
+
+  {/* Left Arrow */}
+  {/* Left Arrow */}
+<button
+  onClick={() => swiperRef.current?.slidePrev()}
+  className="
+    absolute
+    left-1
+    top-1/2
+    -translate-y-1/2
+    z-20
+    w-7
+    h-7
+    bg-black/50
+    text-white
+    text-sm
+    flex
+    items-center
+    justify-center
+  "
+>
+  ❮
+</button>
+
+{/* Right Arrow */}
+<button
+  onClick={() => swiperRef.current?.slideNext()}
+  className="
+    absolute
+    right-1
+    top-1/2
+    -translate-y-1/2
+    z-20
+    w-7
+    h-7
+    bg-black/50
+    text-white
+    text-sm
+    flex
+    items-center
+    justify-center
+  "
+>
+  ❯
+</button>
+</div>
+
+        {/* DESKTOP GRID */}
+        <div className="hidden md:grid grid-cols-3 auto-rows-[300px] gap-6">
           {gallery.map((g, i) => (
-
            <div
   key={i}
-  onClick={() =>
-    setActiveProject(activeProject === i ? null : i)
-  }
-  className={`gallery-item ${g.h} relative overflow-hidden group cursor-pointer`}
+  className={`gallery-item ${g.h} relative overflow-hidden group`}
 >
               <img
-                src={g.src}
-                alt={g.alt}
-                loading="lazy"
-                className="w-full h-full object-cover"
-              />
+  src={g.src}
+  alt={g.alt}
+  className="absolute inset-0 w-full h-full object-cover"
+/>
+              <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-6">
+                <h3 className="font-serif text-white text-2xl mb-2">
+                  {g.name}
+                </h3>
 
-              {/* Hover Overlay */}
-<div
-  className={`
-    absolute inset-0
-    bg-black/60
-    flex flex-col justify-end
-    p-4 md:p-6
-    transition-all duration-500
-
-    ${
-      activeProject === i
-        ? "opacity-100"
-        : "opacity-0 md:group-hover:opacity-100"
-    }
-  `}
->
-
-               <h3 className="font-serif text-white text-lg md:text-2xl mb-2">
-  {g.name}
-</h3>
-
-<p className="text-white/80 text-sm">
-  📍 {g.location}
-</p>
-
+                <p className="text-white/80 text-sm">
+                  📍 {g.location}
+                </p>
               </div>
-
             </div>
-
           ))}
-
         </div>
 
       </div>
-
     </section>
   );
 }
