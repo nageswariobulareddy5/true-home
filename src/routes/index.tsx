@@ -422,44 +422,44 @@ function About() {
         {/* Team Cards */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6">
 
-          <div className="bg-background border border-border rounded-lg p-4 md:p-8 min-h-[120px] md:min-h-[220px] flex flex-col justify-center text-center hover:border-gold transition-all duration-300">
-            <h3 className="font-serif text-base md:text-2xl mb-2">
+          <div className="bg-background border border-border rounded-lg p-4 md:p-8 min-h-[95px] md:min-h-[220px] flex flex-col justify-center text-center hover:border-gold transition-all duration-300">
+           <h3 className="font-serif text-lg md:text-3xl mb-2">
               K Siva Nagaraju
             </h3>
 
-            <p className="text-gold uppercase tracking-[0.15em] text-[9px] md:text-sm leading-relaxed">
-              Managing Director & Builder
-            </p>
+          <p className="text-gold uppercase text-[6px] md:text-sm leading-tight tracking-normal">
+  Managing Director & Builder
+</p>
           </div>
 
-          <div className="bg-background border border-border rounded-lg p-4 md:p-8 min-h-[120px] md:min-h-[220px] flex flex-col justify-center text-center hover:border-gold transition-all duration-300">
-            <h3 className="font-serif text-base md:text-2xl mb-2">
+          <div className="bg-background border border-border rounded-lg p-4 md:p-8 min-h-[95px] md:min-h-[220px] flex flex-col justify-center text-center hover:border-gold transition-all duration-300">
+       <h3 className="font-serif text-lg md:text-3xl mb-2">
               O Prasad
             </h3>
 
-            <p className="text-gold uppercase tracking-[0.15em] text-[9px] md:text-sm leading-relaxed">
-              Managing Director & Builder
-            </p>
+          <p className="text-gold uppercase text-[6px] md:text-sm leading-tight tracking-normal">
+  Managing Director & Builder
+</p>
           </div>
 
-          <div className="bg-background border border-border rounded-lg p-4 md:p-8 min-h-[120px] md:min-h-[220px] flex flex-col justify-center text-center hover:border-gold transition-all duration-300">
-            <h3 className="font-serif text-base md:text-2xl mb-2">
+          <div className="bg-background border border-border rounded-lg p-4 md:p-8 min-h-[95px] md:min-h-[220px] flex flex-col justify-center text-center hover:border-gold transition-all duration-300">
+           <h3 className="font-serif text-lg md:text-3xl mb-2">
               G Hari Teja
             </h3>
 
-            <p className="text-gold uppercase tracking-[0.15em] text-[9px] md:text-sm leading-relaxed">
-              Managing Director & Builder
-            </p>
+         <p className="text-gold uppercase text-[6px] md:text-sm leading-tight tracking-normal">
+  Managing Director & Builder
+</p>
           </div>
 
-          <div className="bg-background border border-border rounded-lg p-4 md:p-8 min-h-[120px] md:min-h-[220px] flex flex-col justify-center text-center hover:border-gold transition-all duration-300">
-            <h3 className="font-serif text-base md:text-2xl mb-2">
+          <div className="bg-background border border-border rounded-lg p-4 md:p-8 min-h-[95px] md:min-h-[220px] flex flex-col justify-center text-center hover:border-gold transition-all duration-300">
+           <h3 className="font-serif text-lg md:text-xl mb-2">
               S Dinesh
             </h3>
 
-            <p className="text-gold uppercase tracking-[0.15em] text-[9px] md:text-sm leading-relaxed">
-              Managing Director & Builder
-            </p>
+          <p className="text-gold uppercase text-[6px] md:text-sm leading-tight tracking-normal">
+  Managing Director & Builder
+</p>
           </div>
 
         </div>
@@ -562,7 +562,7 @@ const gallery = [
 
   {
     src: pf4,
-    mobile: pf4mobile,
+    mobile: pf6mobile,
     h: "",
     alt: "Residential Project",
     name: "Trident",
@@ -589,7 +589,7 @@ const gallery = [
 
   {
     src: pf6,
-    mobile: pf6mobile,
+    mobile: pf4mobile,
     h: "",
     alt: "Premium Project",
     name: "Green Rich Country",
