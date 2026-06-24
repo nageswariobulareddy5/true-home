@@ -450,8 +450,10 @@ function Team() {
   K Siva Nagaraju
 </h3>
 
-<p className="text-gold text-[20px] leading-4 opacity-70">
-  Managing Director & Builder
+<p className="text-gold text-[7px] leading-4 opacity-70">
+  Managing Director
+  <br />
+  & Builder
 </p>
 
 </div>
@@ -461,8 +463,10 @@ function Team() {
       O Prasad
     </h3>
 
-   <p className="text-gold text-[20px] leading-4 opacity-70">
-  Managing Director & Builder
+  <p className="text-gold text-[7px] leading-4 opacity-70">
+  Managing Director
+  <br />
+  & Builder
 </p>
   </div>
 
@@ -471,8 +475,10 @@ function Team() {
       G Hari Teja
     </h3>
 
-   <p className="text-gold text-[20px] leading-4 opacity-70">
-  Managing Director & Builder
+  <p className="text-gold text-[7px] leading-4 opacity-70">
+  Managing Director
+  <br />
+  & Builder
 </p>
   </div>
 
@@ -481,8 +487,10 @@ function Team() {
       S Dinesh
     </h3>
 
-   <p className="text-gold text-[20px] leading-4 opacity-70">
-  Managing Director & Builder
+  <p className="text-gold text-[7px] leading-4 opacity-70">
+  Managing Director
+  <br />
+  & Builder
 </p>
   </div>
 
