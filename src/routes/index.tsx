@@ -442,60 +442,59 @@ function Team() {
 
 
 {/* MOBILE TEAM */}
-<div className="grid grid-cols-2 gap-3 md:hidden">
+<div className="grid grid-cols-2 gap-2 md:hidden">
 
-  <div className="bg-background border border-border rounded-lg px-2 py-3 min-h-[95px] flex flex-col justify-center text-center">
+  <div className="bg-background border border-border rounded-lg p-4 min-h-[160px] flex flex-col justify-center text-center hover:border-gold transition-all duration-300">
+    <h3 className="font-serif text-[1.8rem] leading-tight mb-3">
+      K Siva
+      <br />
+      Nagaraju
+    </h3>
 
-  <h3 className="font-serif text-[24px] leading-tight mb-3">
-  K Siva Nagaraju
-</h3>
+    <p className="text-gold text-[11px] leading-5 font-light">
+      Managing Director
+      <br />
+      & Builder
+    </p>
+  </div>
 
-<p className="text-gold text-[7px] leading-4 opacity-70">
-  Managing Director
-  <br />
-  & Builder
-</p>
-
-</div>
-
-  <div className="bg-background border border-border rounded-lg px-2 py-3 min-h-[95px] flex flex-col justify-center text-center">
-    <h3 className="font-serif text-[24px] leading-tight mb-2">
+  <div className="bg-background border border-border rounded-lg p-4 min-h-[160px] flex flex-col justify-center text-center hover:border-gold transition-all duration-300">
+    <h3 className="font-serif text-[1.8rem] leading-tight mb-3">
       O Prasad
     </h3>
 
-  <p className="text-gold text-[7px] leading-4 opacity-70">
-  Managing Director
-  <br />
-  & Builder
-</p>
+    <p className="text-gold text-[11px] leading-5 font-light">
+      Managing Director
+      <br />
+      & Builder
+    </p>
   </div>
 
- <div className="bg-background border border-border rounded-lg px-2 py-3 min-h-[95px] flex flex-col justify-center text-center">
-<h3 className="font-serif text-[24px] leading-tight mb-2">
+  <div className="bg-background border border-border rounded-lg p-4 min-h-[160px] flex flex-col justify-center text-center hover:border-gold transition-all duration-300">
+    <h3 className="font-serif text-[1.8rem] leading-tight mb-3">
       G Hari Teja
     </h3>
 
-  <p className="text-gold text-[7px] leading-4 opacity-70">
-  Managing Director
-  <br />
-  & Builder
-</p>
+    <p className="text-gold text-[11px] leading-5 font-light">
+      Managing Director
+      <br />
+      & Builder
+    </p>
   </div>
 
-<div className="bg-background border border-border rounded-lg px-2 py-3 min-h-[95px] flex flex-col justify-center text-center">
-   <h3 className="font-serif text-[24px] leading-tight mb-2">
+  <div className="bg-background border border-border rounded-lg p-4 min-h-[160px] flex flex-col justify-center text-center hover:border-gold transition-all duration-300">
+    <h3 className="font-serif text-[1.8rem] leading-tight mb-3">
       S Dinesh
     </h3>
 
-  <p className="text-gold text-[7px] leading-4 opacity-70">
-  Managing Director
-  <br />
-  & Builder
-</p>
+    <p className="text-gold text-[11px] leading-5 font-light">
+      Managing Director
+      <br />
+      & Builder
+    </p>
   </div>
 
 </div>
-
 
 {/* DESKTOP TEAM */}
 <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-6">
