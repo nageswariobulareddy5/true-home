@@ -1099,7 +1099,7 @@ function Index() {
 
   <meta
     property="og:image"
-    content="https://truehomebuilders.in/og-image.jpg"
+    content="https://truehomebuilders.in/og-image.png"
   />
 
   <meta
@@ -1140,7 +1140,7 @@ function Index() {
 
   <meta
     name="twitter:image"
-    content="https://truehomebuilders.in/og-image.jpg"
+    content="https://truehomebuilders.in/og-image.png"
   />
 
   <script type="application/ld+json">
