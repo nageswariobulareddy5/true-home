@@ -41,23 +41,85 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
 }
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
-  head: () => ({
-    meta: [
-      { charSet: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "True Home Builders — Precision, Integrity, Craftsmanship" },
-      { name: "description", content: "True Home Builders crafts custom homes, renovations and architectural projects with precision, integrity and exceptional craftsmanship." },
-      { property: "og:title", content: "True Home Builders" },
-      { property: "og:description", content: "Building foundations for life. Custom homes, renovations and architectural planning." },
-      { property: "og:type", content: "website" },
-    ],
-    links: [
-      { rel: "stylesheet", href: appCss },
-      { rel: "preconnect", href: "https://fonts.googleapis.com" },
-      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" },
-    ],
-  }),
+ head: () => ({
+  meta: [
+    { charSet: "utf-8" },
+    {
+      name: "viewport",
+      content: "width=device-width, initial-scale=1",
+    },
+
+    {
+      title:
+        "True Home Builders | Villas, Apartments & Open Plots in Hyderabad",
+    },
+
+    {
+      name: "description",
+      content:
+        "Premium villas, apartments and open plots in Hyderabad with trusted construction and exceptional craftsmanship.",
+    },
+
+    {
+      property: "og:title",
+      content:
+        "True Home Builders | Villas, Apartments & Open Plots",
+    },
+    {
+      property: "og:description",
+      content:
+        "Premium villas, apartments and open plots in Hyderabad.",
+    },
+    {
+      property: "og:type",
+      content: "website",
+    },
+    {
+      property: "og:url",
+      content: "https://truehomebuilders.in",
+    },
+    {
+      property: "og:image",
+      content: "https://truehomebuilders.in/og-image.png",
+    },
+    {
+      property: "og:image:width",
+      content: "1200",
+    },
+    {
+      property: "og:image:height",
+      content: "630",
+    },
+    {
+      property: "og:site_name",
+      content: "True Home Builders",
+    },
+
+    {
+      name: "twitter:card",
+      content: "summary_large_image",
+    },
+    {
+      name: "twitter:title",
+      content: "True Home Builders",
+    },
+    {
+      name: "twitter:description",
+      content:
+        "Premium villas, apartments and open plots in Hyderabad.",
+    },
+    {
+      name: "twitter:image",
+      content: "https://truehomebuilders.in/og-image.png",
+    },
+  ],
+
+  links: [
+    { rel: "stylesheet", href: appCss },
+    { rel: "canonical", href: "https://truehomebuilders.in" },
+    { rel: "icon", href: "/favicon.png" },
+  ],
+}),
   shellComponent: RootShell,
   component: RootComponent,
   notFoundComponent: NotFoundComponent,
