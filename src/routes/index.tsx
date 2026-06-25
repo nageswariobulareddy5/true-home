@@ -1056,7 +1056,7 @@ function Footer() {
 function Index() {
   return (
     <main className="bg-background text-foreground">
-     <Helmet>
+   <Helmet>
   <title>
     True Home Builders | Villas, Apartments & Open Plots in Hyderabad
   </title>
@@ -1071,24 +1071,7 @@ function Index() {
     content="True Home Builders, Hyderabad builders, villas, apartments, open plots, construction company Hyderabad"
   />
 
-  <meta property="og:title" content="True Home Builders" />
-
-  <meta
-    property="og:description"
-    content="Premium villas, apartments, and open plots in Hyderabad."
-  />
-
-  <meta
-    property="og:image"
-    content="https://truehomebuilders.in/logo.png"
-  />
-
-  <meta
-    property="og:url"
-    content="https://truehomebuilders.in"
-  />
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <link
     rel="canonical"
@@ -1101,23 +1084,82 @@ function Index() {
     href="/favicon.png"
   />
 
+  {/* Open Graph */}
+  <meta property="og:type" content="website" />
+
+  <meta
+    property="og:title"
+    content="True Home Builders | Villas, Apartments & Open Plots"
+  />
+
+  <meta
+    property="og:description"
+    content="Premium villas, apartments, and open plots in Hyderabad with trusted construction and exceptional craftsmanship."
+  />
+
+  <meta
+    property="og:image"
+    content="https://truehomebuilders.in/og-image.jpg"
+  />
+
+  <meta
+    property="og:image:width"
+    content="1200"
+  />
+
+  <meta
+    property="og:image:height"
+    content="630"
+  />
+
+  <meta
+    property="og:url"
+    content="https://truehomebuilders.in"
+  />
+
+  <meta
+    property="og:site_name"
+    content="True Home Builders"
+  />
+
+  {/* Twitter Card */}
+  <meta
+    name="twitter:card"
+    content="summary_large_image"
+  />
+
+  <meta
+    name="twitter:title"
+    content="True Home Builders"
+  />
+
+  <meta
+    name="twitter:description"
+    content="Premium villas, apartments, and open plots in Hyderabad."
+  />
+
+  <meta
+    name="twitter:image"
+    content="https://truehomebuilders.in/og-image.jpg"
+  />
+
   <script type="application/ld+json">
     {`
     {
-      "@context":"https://schema.org",
-  "@type":"LocalBusiness",
-  "name":"True Home Builders",
-  "url":"https://truehomebuilders.in",
-  "image":"https://truehomebuilders.in/logo.png",
-  "logo":"https://truehomebuilders.in/logo.png",
-  "telephone":"+91 8886869900",
-  "address":{
-    "@type":"PostalAddress",
-    "streetAddress":"Shanthi Sree Nagar",
-    "addressLocality":"Hyderabad",
-    "addressRegion":"Telangana",
-    "postalCode":"502033",
-    "addressCountry":"IN"
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "True Home Builders",
+      "url": "https://truehomebuilders.in",
+      "image": "https://truehomebuilders.in/og-image.jpg",
+      "logo": "https://truehomebuilders.in/logo.png",
+      "telephone": "+91 8886869900",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Shanthi Sree Nagar",
+        "addressLocality": "Hyderabad",
+        "addressRegion": "Telangana",
+        "postalCode": "502033",
+        "addressCountry": "IN"
       }
     }
     `}
