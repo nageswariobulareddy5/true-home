@@ -75,13 +75,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       content: "website",
     },
     {
-      property: "og:url",
-      content: "https://truehomebuilders.in",
-    },
-    {
-      property: "og:image",
-      content: "https://truehomebuilders.in/og-image.png",
-    },
+  property: "og:image",
+  content: "https://www.truehomebuilders.in/og-image.png",
+},
+{
+  property: "og:url",
+  content: "https://www.truehomebuilders.in",
+},
     {
       property: "og:image:width",
       content: "1200",
@@ -116,7 +116,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
   links: [
     { rel: "stylesheet", href: appCss },
-    { rel: "canonical", href: "https://truehomebuilders.in" },
+   {
+  rel: "canonical",
+  href: "https://www.truehomebuilders.in",
+},
     { rel: "icon", href: "/favicon.png" },
   ],
 }),
